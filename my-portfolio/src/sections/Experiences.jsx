@@ -44,73 +44,101 @@ const Experiences = () => {
   ];
 
   return (
-    <div className={`py-20 transition-colors duration-300 ${
-      darkMode ? 'bg-black' : 'bg-white'
-    }`}>
-      <div
-        id="experience"
-        className="flex justify-center items-center px-12 w-full mb-16"
-      >
-        <h2 className={`text-5xl md:text-7xl font-extrabold ${
-          darkMode ? 'text-white' : 'text-black'
-        }`}>
-          EXPERIENCE
+    <section
+      id="experience"
+      className={`w-full min-h-screen flex items-center justify-center py-56 md:py-64 transition-colors duration-300 ${
+        darkMode ? "bg-black" : "bg-white"
+      }`}
+    >
+      <div className="w-full max-w-6xl mx-auto px-6">
+        <h2 className="text-5xl md:text-6xl font-bold text-center mb-24">
+          <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+            Experiences
+          </span>
         </h2>
-      </div>
 
-      <div className="flex flex-col items-center justify-center py-8 px-8 gap-12">
-        {experiences.map((exp, index) => (
+        <div className="relative">
+          {/* subtle fade edges so horizontal scroll feels nicer */}
           <div
-            key={index}
-            className={`w-full max-w-4xl p-8 rounded-xl border-2 transition-all duration-300 ${
-              darkMode 
-                ? 'bg-gray-900/50 border-white/10 hover:border-blue-500/50' 
-                : 'bg-gray-50/50 border-black/10 hover:border-blue-500/50'
-            } shadow-lg hover:shadow-2xl`}
+            className={`pointer-events-none absolute left-0 top-0 h-full w-10 md:w-16 bg-gradient-to-r ${
+              darkMode ? "from-black" : "from-white"
+            } to-transparent z-10`}
+          />
+          <div
+            className={`pointer-events-none absolute right-0 top-0 h-full w-10 md:w-16 bg-gradient-to-l ${
+              darkMode ? "from-black" : "from-white"
+            } to-transparent z-10`}
+          />
+
+          <div
+            className="overflow-x-auto pb-10"
+            style={{ WebkitOverflowScrolling: "touch" }}
           >
-            <div className="flex flex-col justify-between h-full">
-              <div className="flex flex-col">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h3 className={`text-2xl font-bold ${
-                    darkMode ? 'text-white' : 'text-black'
-                  }`}>
-                    {exp.title}
-                  </h3>
-                  <span className={`text-sm mt-1 md:mt-0 ${
-                    darkMode ? 'text-gray-400' : 'text-gray-600'
-                  }`}>
-                    {exp.period}
-                  </span>
-                </div>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <h4 className="text-xl text-blue-400 hover:text-blue-500 transition-colors duration-300">
-                    {exp.company}
-                  </h4>
-                  <span className={`text-sm ${
-                    darkMode ? 'text-gray-400' : 'text-gray-600'
-                  }`}>
-                    📍 {exp.location}
-                  </span>
-                </div>
-                <ul className="space-y-3 pt-2 mt-6">
-                  {exp.description.map((item, i) => (
-                    <li
-                      key={i}
-                      className={`text-base flex items-start ${
-                        darkMode ? 'text-gray-300' : 'text-gray-700'
+    <div className="flex gap-10 md:gap-12 min-w-max pr-10 snap-x snap-mandatory">
+              {experiences.map((exp, index) => (
+                <article
+                  key={index}
+      className={`snap-start w-[320px] sm:w-[380px] md:w-[420px] flex-shrink-0 p-8 md:p-9 rounded-2xl border transition-all duration-300 ${
+                    darkMode
+                      ? "bg-[#111111] border-gray-800 hover:border-blue-500/50"
+                      : "bg-white border-gray-200 hover:border-blue-500/40"
+                  } shadow-lg hover:shadow-2xl`}
+                >
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <h3
+                      className={`text-xl md:text-2xl font-bold leading-snug ${
+                        darkMode ? "text-white" : "text-gray-900"
                       }`}
                     >
-                      <span className="mr-3 text-blue-400 text-xl">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      {exp.title}
+                    </h3>
+                    <span
+                      className={`text-xs md:text-sm whitespace-nowrap ${
+                        darkMode ? "text-gray-400" : "text-gray-600"
+                      }`}
+                    >
+                      {exp.period}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-4 mb-5">
+                    <p className="text-base md:text-lg font-semibold text-blue-400">
+                      {exp.company}
+                    </p>
+                    <span
+                      className={`text-xs md:text-sm ${
+                        darkMode ? "text-gray-400" : "text-gray-600"
+                      }`}
+                    >
+                      {exp.location}
+                    </span>
+                  </div>
+
+                  <ul className="space-y-3">
+                    {exp.description.map((item, i) => (
+                      <li
+                        key={i}
+                        className={`text-sm md:text-base leading-relaxed flex items-start gap-3 ${
+                          darkMode ? "text-gray-300" : "text-gray-700"
+                        }`}
+                      >
+                        <span
+                          className={`mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 ${
+                            darkMode ? "bg-blue-400" : "bg-blue-600"
+                          }`}
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
             </div>
           </div>
-        ))}
+
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

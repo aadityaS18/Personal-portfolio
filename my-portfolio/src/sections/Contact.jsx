@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className={`w-full min-h-screen flex items-center justify-center py-40 transition-colors duration-300 ${
+      className={`w-full min-h-screen flex items-center justify-center py-40 md:py-48 transition-colors duration-300 ${
         darkMode ? "bg-black" : "bg-white"
       }`}
     >
@@ -24,7 +24,7 @@ const Contact = () => {
 
         {/* Description */}
         <p
-          className={`text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-24 ${
+          className={`text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-20 ${
             darkMode ? "text-gray-400" : "text-gray-600"
           }`}
         >

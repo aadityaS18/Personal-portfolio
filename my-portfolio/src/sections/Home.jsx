@@ -6,12 +6,12 @@ const Home = () => {
     const { darkMode } = useTheme();
 
     return (
-        <section id="home" className={`w-full min-h-screen flex items-center justify-center pt-20 transition-colors duration-300 ${
+        <section id="home" className={`w-full min-h-screen flex items-center justify-center pt-20 pb-40 md:pb-48 transition-colors duration-300 ${
             darkMode ? 'bg-black' : 'bg-white'
         }`}>
-            <div className="max-w-5xl mx-auto px-6 py-40 text-center">
+            <div className="max-w-5xl mx-auto px-6 py-20 text-center">
                 {/* Profile Image - Centered */}
-                <div className="flex justify-center mb-24">
+                <div className="flex justify-center mb-20">
                     <div className="relative">
                         <div className={`w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 shadow-xl ${
                             darkMode ? 'border-white/10 shadow-white/5' : 'border-black/10 shadow-black/5'
@@ -26,20 +26,20 @@ const Home = () => {
                 </div>
 
                 {/* Name - Centered */}
-                <h1 className="text-6xl md:text-8xl font-bold mb-14 leading-tight">
+                <h1 className="text-6xl md:text-8xl font-bold mb-12 leading-tight">
                     <span className={darkMode ? 'text-white' : 'text-black'}>Aaditya </span>
                     <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Shankar</span>
                 </h1>
 
                 {/* Title - Centered */}
-                <p className={`text-2xl md:text-3xl mb-32 leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                <p className={`text-2xl md:text-3xl mb-24 leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                     Computer Engineering Student | AI/ML Enthusiast
                 </p>
 
                 {/* Clickable Scroll indicator */}
                 <a 
                     href="#about" 
-                    className={`inline-flex justify-center mt-32 animate-bounce cursor-pointer hover:text-blue-400 transition-colors ${
+                    className={`inline-flex justify-center mt-16 animate-bounce cursor-pointer hover:text-blue-400 transition-colors ${
                         darkMode ? 'text-gray-400' : 'text-gray-600'
                     }`}
                 >

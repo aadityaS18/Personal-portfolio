@@ -57,13 +57,13 @@ const Skills=() =>{
     ];
 
     return(
-        <section id="skills" className={`w-full min-h-screen flex flex-col items-center justify-center py-48 px-6 transition-colors duration-300 ${
+        <section id="skills" className={`w-full min-h-screen flex flex-col items-center justify-center py-40 md:py-48 px-6 transition-colors duration-300 ${
             darkMode ? 'bg-black' : 'bg-white'
         }`}>
             <div className="max-w-7xl mx-auto w-full">
                 {/* Header */}
                 <div className="text-center mb-24">
-                    <h2 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight">
+                    <h2 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
                         <span className={`${darkMode ? 'text-white' : 'text-black'}`}>Skills & </span>
                         <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Technologies</span>
                     </h2>

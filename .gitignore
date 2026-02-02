@@ -1,0 +1,4 @@
+# Local Netlify folder
+.netlify
+vercel.json
+.DS_Store

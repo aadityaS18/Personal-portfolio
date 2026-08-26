@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm --prefix my-portfolio install && npm --prefix my-portfolio run build",
+  "outputDirectory": "my-portfolio/dist",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

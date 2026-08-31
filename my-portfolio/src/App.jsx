@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar"
+import CustomCursor from "./components/CustomCursor"
 import Home from "./sections/Home"
 import About from "./sections/About"
 import Skills from "./sections/Skills"
@@ -10,6 +11,7 @@ import { ThemeProvider } from "./context/ThemeContext"
 function AppContent() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground transition-colors duration-300">
+      <CustomCursor />
       <Navbar />
       <main>
         <Home />

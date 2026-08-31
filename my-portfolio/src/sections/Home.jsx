@@ -2,6 +2,7 @@ import React from "react";
 import { FaCss3Alt, FaGithub, FaGitAlt, FaHtml5, FaJs, FaLinkedin, FaPython, FaReact } from "react-icons/fa";
 import { SiAmazonwebservices, SiAngular, SiC, SiCplusplus, SiDjango, SiDocker, SiFastapi, SiFlask, SiKeras, SiMysql, SiNumpy, SiPandas, SiPostgresql, SiPytorch, SiScikitlearn, SiStreamlit, SiTailwindcss, SiTensorflow, SiTypescript, SiVercel } from "react-icons/si";
 import profileImage from "../assets/personal.jpeg";
+import resumePdf from "../assets/Aaditya_Cv.pdf";
 import { useTheme } from "../context/ThemeContext";
 import { InfiniteSlider } from "../components/motion-primitives/infinite-slider";
 import { Button } from "../components/watermelon-ui/button";
@@ -46,12 +47,12 @@ const Home = () => {
             <img
               src={profileImage}
               alt="Aaditya Shankar"
-              className={`mx-auto h-44 w-44 rounded-full object-cover object-[center_40%] sm:h-52 sm:w-52 ${darkMode ? "ring-1 ring-slate-700" : "ring-1 ring-slate-200"}`}
+              className={`mx-auto h-44 w-44 rounded-full object-cover object-center sm:h-52 sm:w-52 ${darkMode ? "ring-1 ring-slate-700" : "ring-1 ring-slate-200"}`}
             />
             <h1 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">Aaditya Shankar</h1>
             <div className={`mt-4 space-y-1.5 text-sm leading-6 sm:text-base ${darkMode ? "text-slate-300/80" : "text-slate-600"}`}>
-              <p>AI Engineering Intern @ Dailoqa</p>
-              <p>Computer Engineering @ Trinity College Dublin</p>
+              <p>Ex AI Eng @ Dailoqa</p>
+              <p>Final-year Computer Engineering @ TCD</p>
               <p>AI / ML + Full-stack Engineer</p>
             </div>
             <div className="mt-6 flex justify-center gap-4">
@@ -76,9 +77,14 @@ const Home = () => {
               I build full-stack products that turn complex workflows into reliable, usable software, from intelligent tools and backend systems to production web applications.
             </p>
 
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:items-start">
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap lg:items-start">
               <Button asChild size="lg" className="h-12 min-w-[10.5rem] rounded-full px-8 text-base">
                 <a href="#projects">View projects</a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="h-12 min-w-[10.5rem] rounded-full px-8 text-base">
+                <a href={resumePdf} target="_blank" rel="noopener noreferrer" download="Aaditya_Shankar_Resume.pdf">
+                  Resume
+                </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 min-w-[10.5rem] rounded-full px-8 text-base">
                 <a href="#contact">Get in touch</a>
